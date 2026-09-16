@@ -21,6 +21,9 @@
   .steps{margin:0 0 20px 1.2em;font-size:15px}
   .steps li{margin-bottom:6px}
   .steps b{color:var(--gold-bright);font-weight:500}
+  h3{font-family:'Shippori Mincho B1',serif;font-size:15px;font-weight:600;letter-spacing:.08em;color:var(--gold);margin:24px 0 10px}
+  .howto{margin-bottom:8px}
+  .note{color:var(--muted);font-size:13px;margin-top:12px}
   video{display:block;width:100%;max-width:300px;margin:0 auto;border:1px solid var(--hairline);border-radius:12px}
   footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--hairline);color:var(--muted);font-size:12px;text-align:center}
 </style>
@@ -31,19 +34,40 @@
   <p class="tagline">毎日ひとつ、心を整える言葉を。</p>
 
   <h2>アプリについて</h2>
-  <p>《中心道》の日めくりカレンダーをスマートフォンで。日付とともに自動でめくれる今日の言葉を、アプリ・ホーム画面ウィジェット・ロック画面ウィジェットでご覧いただけます。</p>
+  <p>《中心道》の日めくりカレンダーをスマートフォンで。日付とともに自動でめくれる今日の言葉を、アプリとホーム画面ウィジェットでご覧いただけます（ロック画面ウィジェットは iPhone のみ）。</p>
 
   <h2>ホーム画面にウィジェットを追加する</h2>
-  <ol class="steps">
-    <li>ホーム画面の何もない所を<b>長押し</b>します</li>
-    <li>左上の<b>「＋」</b>をタップします</li>
-    <li>検索欄に<b>「中心道」</b>と入力し、中心道カレンダーを選びます</li>
-    <li>小・中・大からサイズを選び、<b>「ウィジェットを追加」</b>をタップします</li>
-    <li>右上の<b>「完了」</b>をタップして終わりです</li>
-  </ol>
-  <video src="./widget-howto.mp4" poster="./widget-howto-poster.jpg"
-         controls playsinline muted loop preload="metadata"
-         aria-label="ウィジェットを追加する操作の録画"></video>
+
+  <section id="howto-ios" class="howto">
+    <h3>iPhone・iPad の場合</h3>
+    <ol class="steps">
+      <li>ホーム画面の何もない所を<b>長押し</b>します</li>
+      <li>左上の<b>「＋」</b>をタップします</li>
+      <li>検索欄に<b>「中心道」</b>と入力し、中心道カレンダーを選びます</li>
+      <li>小・中・大からサイズを選び、<b>「ウィジェットを追加」</b>をタップします</li>
+      <li>右上の<b>「完了」</b>をタップして終わりです</li>
+    </ol>
+    <video src="./widget-howto.mp4" poster="./widget-howto-poster.jpg"
+           controls playsinline muted loop preload="metadata"
+           aria-label="iPhone でウィジェットを追加する操作の録画"></video>
+    <p class="note">ロック画面にも追加できます（ロック画面を長押し →「カスタマイズ」→ ウィジェット枠をタップ）。</p>
+  </section>
+
+  <section id="howto-android" class="howto">
+    <h3>Android の場合</h3>
+    <ol class="steps">
+      <li>ホーム画面の何もない所を<b>長押し</b>します</li>
+      <li><b>「ウィジェット」</b>をタップします</li>
+      <li>一覧から<b>「中心道カレンダー」</b>を探してタップします（アプリ名順に並んでいます）</li>
+      <li>表示されたウィジェットを<b>長押ししたまま</b>、ホーム画面の置きたい場所までドラッグします</li>
+      <li>置いたあと、ウィジェットを長押しして<b>四隅をドラッグ</b>すると大きさを変えられます</li>
+    </ol>
+    <video src="./widget-howto-android.mp4" poster="./widget-howto-android-poster.jpg"
+           controls playsinline muted loop preload="metadata"
+           aria-label="Android でウィジェットを追加する操作の録画"></video>
+    <p class="note">横長・大きいサイズにすると、日めくりの画像に加えて<b>今日の言葉</b>も表示されます。<br>
+      機種やホームアプリによって、手順2の名称が「ウィジェットを追加」などに変わることがあります。</p>
+  </section>
 
   <h2>お問い合わせ</h2>
   <p>アプリに関するご質問・不具合のご報告は、下記メールアドレスまでお願いいたします。</p>
@@ -53,7 +77,7 @@
   <h2>よくある質問</h2>
   <dl class="faq">
     <dt>Q. ウィジェットの日付が変わりません</dt>
-    <dd>A. ウィジェットは深夜0時（日本時間）に自動更新されます。更新されない場合は、ウィジェットを一度削除して追加し直してください。</dd>
+    <dd>A. ウィジェットは深夜0時（日本時間）に自動更新されます。Android では端末の状態により数分ずれることがあります。それでも変わらない場合は、ウィジェットを一度削除して追加し直してください。</dd>
     <dt>Q. イベントリマインドの通知が届きません</dt>
     <dd>A. アプリの「設定」タブでイベントリマインドが有効か、また端末の設定でこのアプリの通知が許可されているかをご確認ください。</dd>
     <dt>Q. 通知の時刻は変えられますか</dt>
@@ -65,5 +89,13 @@
 
   <footer>© 2026 株式会社ヒューマン・パワー・イノベーション</footer>
 </div>
+<script>
+  // 見ている端末に合う手順を先頭へ。JS が動かない場合は iPhone → Android の順のまま
+  if (/android/i.test(navigator.userAgent)) {
+    var android = document.getElementById('howto-android')
+    var ios = document.getElementById('howto-ios')
+    ios.parentNode.insertBefore(android, ios)
+  }
+</script>
 </body>
 </html>
